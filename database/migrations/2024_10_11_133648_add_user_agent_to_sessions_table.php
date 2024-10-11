@@ -14,7 +14,7 @@ class AddUserAgentToSessionsTable extends Migration
     public function up()
     {
         Schema::table('sessions', function (Blueprint $table) {
-            $table->string('user_agent')->nullable()->after('ip_address');
+            $table->string('user_agent')->nullable();
         });
     }
 
