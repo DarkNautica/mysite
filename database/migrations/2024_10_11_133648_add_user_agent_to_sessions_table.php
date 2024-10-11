@@ -6,13 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class AddUserAgentToSessionsTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::table('sessions', function (Blueprint $table) {
-            $table->string('user_agent')->nullable();
+            $table->string('user_agent')->nullable()->after('ip_address');
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::table('sessions', function (Blueprint $table) {
